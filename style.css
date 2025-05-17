@@ -1,0 +1,142 @@
+export const StyleGuide = {
+  semanticTokens: {
+    button: {
+      primary: {
+        bg: '#007AFF', text: '#FFFFFF', hoverBg: '#005FCC', disabledBg: '#B0B0B0'
+      },
+      secondary: {
+        bg: '#F2F2F7', text: '#1C1C1E', hoverBg: '#E5E5EA'
+      },
+      danger: {
+        bg: '#FF3B30', text: '#FFFFFF', hoverBg: '#D8271F'
+      }
+    },
+    input: {
+      background: '#FFFFFF', border: '#D1D1D6', focusBorder: '#007AFF', placeholder: '#8E8E93'
+    },
+    card: {
+      background: '#FFFFFF', shadow: '0 4px 12px rgba(0,0,0,0.08)', borderRadius: '12px'
+    },
+    tooltip: {
+      background: '#1C1C1E', text: '#FFFFFF', radius: '8px', padding: '8px 12px'
+    }
+  },
+
+  grid: {
+    columns: 12, gutter: '16px', maxWidth: '1440px', containerPadding: '24px'
+  },
+
+  density: {
+    compact: { spacing: '4px', textSize: '14px' },
+    regular: { spacing: '8px', textSize: '16px' },
+    spacious: { spacing: '16px', textSize: '18px' }
+  },
+
+  focusStates: {
+    light: { ring: '2px solid #0A84FF', shadow: '0 0 0 3px rgba(10,132,255,0.3)' },
+    dark: { ring: '2px solid #0A84FF', shadow: '0 0 0 3px rgba(10,132,255,0.6)' }
+  },
+
+  feedback: {
+    success: { bg: '#34C759', text: '#FFFFFF' },
+    error: { bg: '#FF3B30', text: '#FFFFFF' },
+    warning: { bg: '#FFCC00', text: '#1C1C1E' },
+    info: { bg: '#5AC8FA', text: '#1C1C1E' },
+    passive: { bg: '#F2F2F7', text: '#1C1C1E' }
+  },
+
+  overlays: {
+    backdrop: 'rgba(0,0,0,0.4)',
+    blurLight: 'blur(16px)',
+    blurDark: 'blur(24px)',
+    dimLayer: 'rgba(0,0,0,0.1)',
+    activeSheet: 'rgba(255,255,255,0.75)'
+  },
+
+  elevations: {
+    base: 0,
+    low: '0 1px 3px rgba(0,0,0,0.06)',
+    medium: '0 4px 8px rgba(0,0,0,0.08)',
+    high: '0 8px 20px rgba(0,0,0,0.12)',
+    highest: '0 16px 48px rgba(0,0,0,0.18)',
+    navBar: '0 0 0.5px rgba(0, 0, 0, 0.25)',
+    modalShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
+  },
+
+  accessibilityLogic: {
+    textContrastRatio: '4.5:1 minimum',
+    enforcedContrastColors: true,
+    forcedColorModeMapping: {
+      background: '#000', text: '#FFF', buttonBg: '#FFF', buttonText: '#000'
+    },
+    focusableRoles: ['button', 'link', 'textbox', 'switch'],
+    keyboardNavOutline: '2px dashed #0A84FF',
+    skipLinks: true,
+    rovingTabIndex: true
+  },
+
+  interactionFeedback: {
+    tapDown: { transform: 'scale(0.96)', duration: '120ms' },
+    hoverIntent: { transform: 'translateY(-2px)', shadow: '0 4px 8px rgba(0,0,0,0.08)' },
+    transitionTiming: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    springPhysics: 'cubic-bezier(0.25, 1, 0.5, 1)',
+    dragDropEasing: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
+    toggleActive: { bg: '#007AFF', knob: '#FFF' },
+    pulse: { animation: 'pulse 1.2s infinite ease-in-out' }
+  },
+
+  depthTokens: {
+    base: 0,
+    belowContent: -1,
+    content: 10,
+    navigation: 100,
+    modal: 1000,
+    tooltip: 2000,
+    highestPriority: 9999
+  },
+
+  surfaceBlend: {
+    light: {
+      base: 'rgba(255, 255, 255, 0.8)',
+      elevated: 'rgba(255, 255, 255, 0.95)',
+      contrast: '#F2F2F7'
+    },
+    dark: {
+      base: 'rgba(28,28,30,0.65)',
+      elevated: 'rgba(28,28,30,0.85)',
+      contrast: '#1C1C1E'
+    }
+  },
+
+  roles: {
+    navigation: { elevation: 'navBar', zIndex: 100, background: 'surfaceBlend.light.base' },
+    modal: { elevation: 'modalShadow', zIndex: 1000, backdrop: 'overlays.backdrop' },
+    chatBubbleUser: { background: '#007AFF', text: '#FFF' },
+    chatBubbleAI: { background: '#E5E5EA', text: '#1C1C1E' }
+  },
+
+  adaptiveTypography: {
+    mobile: { baseSize: '16px', lineHeight: '1.4', maxWidth: '85%' },
+    desktop: { baseSize: '17px', lineHeight: '1.5', maxWidth: '60%' }
+  },
+
+  motionPresets: {
+    modalEnter: { y: 24, opacity: 0, duration: '320ms', easing: 'springPhysics' },
+    drawerSlide: { x: -100, opacity: 0, duration: '280ms', easing: 'dragDropEasing' },
+    bubbleIn: { scale: 0.95, duration: '160ms', easing: 'transitionTiming' }
+  },
+
+  a11yDepth: {
+    skipToChat: true,
+    landmarks: ['main', 'navigation', 'content'],
+    autoTabOrder: true,
+    voiceOverHints: true
+  },
+
+  themeTokens: {
+    '--color-bg-primary': '#FFFFFF',
+    '--radius-button': '12px',
+    '--elevation-card': '0 4px 12px rgba(0,0,0,0.08)',
+    '--motion-curve-spring': 'cubic-bezier(0.25, 1, 0.5, 1)'
+  }
+};
