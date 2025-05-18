@@ -1,0 +1,1187 @@
+export const StyleGuide = {
+  semanticTokens: {
+    button: {
+      primary: {
+        bg: '--button-bg-primary', text: '--button-text-primary', hoverBg: '--button-bg-hover', activeBg: '--button-bg-active'
+      },
+      secondary: {
+        bg: '--input-bg', text: '--input-text', hoverBg: '--input-border'
+      },
+      danger: {
+        bg: '--feedback-error', text: '#FFFFFF', hoverBg: '#D8271F'
+      }
+    },
+    input: {
+      background: '--input-bg', border: '--input-border', focusBorder: '--input-border', placeholder: '--input-placeholder'
+    },
+    card: {
+      background: '--card-bg', shadow: '--card-shadow', borderRadius: '12px'
+    },
+    tooltip: {
+      background: '--tooltip-bg', text: '--tooltip-text', radius: '8px', padding: '8px 12px'
+    }
+  },
+
+  grid: {
+    columns: 12, gutter: '16px', maxWidth: '1440px', containerPadding: '24px'
+  },
+
+  density: {
+    compact: { spacing: '4px', textSize: '14px' },
+    regular: { spacing: '8px', textSize: '16px' },
+    spacious: { spacing: '12px', textSize: '18px' }
+  },
+
+  focusStates: {
+    light: { ring: '2px solid #0A84FF', shadow: '0 0 0 3px rgba(10,132,255,0.3)' },
+    dark: { ring: '2px solid #0A84FF', shadow: '0 0 0 3px rgba(10,132,255,0.6)' }
+  },
+
+  feedback: {
+    success: { bg: '--feedback-success', text: '#FFFFFF' },
+    error: { bg: '--feedback-error', text: '#FFFFFF' },
+    warning: { bg: '--feedback-warning', text: '#1C1C1E' },
+    info: { bg: '--feedback-info', text: '#1C1C1E' },
+    passive: { bg: '--feedback-passive', text: '#1C1C1E' }
+  },
+
+  overlays: {
+    backdrop: 'rgba(0,0,0,0.4)',
+    blurLight: 'blur(16px)',
+    blurDark: 'blur(24px)',
+    dimLayer: 'rgba(0,0,0,0.1)',
+    activeSheet: 'rgba(255,255,255,0.75)'
+  },
+
+  elevations: {
+    base: 0,
+    low: '0 1px 3px rgba(0,0,0,0.06)',
+    medium: '0 4px 8px rgba(0,0,0,0.08)',
+    high: '0 8px 20px rgba(0,0,0,0.12)',
+    highest: '0 16px 48px rgba(0,0,0,0.18)',
+    navBar: '0 0 0.5px rgba(0, 0, 0, 0.25)',
+    modalShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
+  },
+
+  accessibilityLogic: {
+    textContrastRatio: '4.5:1 minimum',
+    enforcedContrastColors: true,
+    forcedColorModeMapping: {
+      background: '#000', text: '#FFF', buttonBg: '#FFF', buttonText: '#000'
+    },
+    focusableRoles: ['button', 'link', 'textbox', 'switch'],
+    keyboardNavOutline: '2px dashed #0A84FF',
+    skipLinks: true,
+    rovingTabIndex: true
+  },
+
+  interactionFeedback: {
+    tapDown: { transform: 'scale(0.96)', duration: '120ms' },
+    hoverIntent: { transform: 'translateY(-2px)', shadow: '0 4px 8px rgba(0,0,0,0.08)' },
+    transitionTiming: 'cubic-bezier(0.4, 0, 0.2, 1)',
+    springPhysics: 'cubic-bezier(0.25, 1, 0.5, 1)',
+    dragDropEasing: 'cubic-bezier(0.22, 0.61, 0.36, 1)',
+    toggleActive: { bg: '#007AFF', knob: '#FFF' },
+    pulse: { animation: 'pulse 1.2s infinite ease-in-out' }
+  },
+
+  depthTokens: {
+    base: 0,
+    belowContent: -1,
+    content: 10,
+    navigation: 100,
+    modal: 1000,
+    tooltip: 2000,
+    highestPriority: 9999
+  },
+
+  surfaceBlend: {
+    light: {
+      base: 'rgba(255, 255, 255, 0.8)',
+      elevated: 'rgba(255, 255, 255, 0.95)',
+      contrast: '#F2F2F7'
+    },
+    dark: {
+      base: 'rgba(28,28,30,0.65)',
+      elevated: 'rgba(28,28,30,0.85)',
+      contrast: '#1C1C1E'
+    }
+  },
+
+  roles: {
+    navigation: { elevation: 'navBar', zIndex: 100, background: 'surfaceBlend.light.base' },
+    modal: { elevation: 'modalShadow', zIndex: 1000, backdrop: 'overlays.backdrop' },
+    chatBubbleUser: { background: '#007AFF', text: '#FFF' },
+    chatBubbleAI: { background: '#E5E5EA', text: '#1C1C1E' }
+  },
+
+  adaptiveTypography: {
+    mobile: { baseSize: '16px', lineHeight: '1.4', maxWidth: '85%' },
+    desktop: { baseSize: '17px', lineHeight: '1.5', maxWidth: '60%' }
+  },
+
+  motionPresets: {
+    modalEnter: { y: 24, opacity: 0, duration: '320ms', easing: 'springPhysics' },
+    drawerSlide: { x: -100, opacity: 0, duration: '280ms', easing: 'dragDropEasing' },
+    bubbleIn: { scale: 0.95, duration: '160ms', easing: 'transitionTiming' }
+  },
+
+  a11yDepth: {
+    skipToChat: true,
+    landmarks: ['main', 'navigation', 'content'],
+    autoTabOrder: true,
+    voiceOverHints: true
+  },
+
+  themeTokens: {
+    '--color-bg-primary': '#FFFFFF',
+    '--color-text-primary': '#000000',
+    '--color-accent': '#007AFF',
+    '--color-error': '#FF3B30',
+    '--color-success': '#34C759',
+    '--spacing-xs': '4px',
+    '--spacing-sm': '8px',
+    '--spacing-md': '12px',
+    '--spacing-lg': '16px',
+    '--spacing-xl': '20px',
+    '--radius-sm': '4px',
+    '--radius-md': '8px',
+    '--radius-lg': '12px',
+    '--radius-button': '12px',
+    '--elevation-low': '0 1px 3px rgba(0,0,0,0.06)',
+    '--elevation-medium': '0 4px 8px rgba(0,0,0,0.08)',
+    '--elevation-high': '0 8px 20px rgba(0,0,0,0.12)',
+    '--elevation-highest': '0 16px 48px rgba(0,0,0,0.18)',
+    '--elevation-nav-bar': '0 0 0.5px rgba(0, 0, 0, 0.25)',
+    '--elevation-modal-shadow': '0 10px 30px rgba(0, 0, 0, 0.3)',
+    '--motion-transition-timing': 'cubic-bezier(0.4, 0, 0.2, 1)',
+    '--motion-spring-physics': 'cubic-bezier(0.25, 1, 0.5, 1)',
+    '--motion-drag-drop-easing': 'cubic-bezier(0.22, 0.61, 0.36, 1)'
+  },
+
+  /* Add dark mode styles */
+  body: {
+    transition: 'background-color 0.3s, color 0.3s'
+  },
+
+  'body.light-mode': {
+    backgroundColor: '#ffffff',
+    color: '#000000'
+  },
+
+  'body.dark-mode': {
+    backgroundColor: '#121212',
+    color: '#ffffff'
+  },
+
+  /* Add animations */
+  '.fade-in': {
+    animation: 'fadeIn 0.5s ease-in-out'
+  },
+
+  '@keyframes fadeIn': {
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    }
+  },
+
+  /* Consciousness Interface Core Styles */
+  '.consciousness-interface': {
+    minHeight: '100vh',
+    background: 'linear-gradient(45deg, rgba(0,0,0,0.92), rgba(20,20,25,0.97))',
+    position: 'relative',
+    overflow: 'hidden'
+  },
+
+  /* Sacred Geometry Patterns */
+  '.conversation-field::before': {
+    content: "''",
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    width: '200vw',
+    height: '200vh',
+    background: 'repeating-conic-gradient(from 0deg, rgba(255,255,255,0.03) 0deg 30deg, transparent 30deg 60deg)',
+    transform: 'translate(-50%, -50%) rotate(0deg)',
+    animation: 'sacredRotation 60s linear infinite',
+    pointerEvents: 'none'
+  },
+
+  '@keyframes sacredRotation': {
+    to: {
+      transform: 'translate(-50%, -50%) rotate(360deg)'
+    }
+  },
+
+  /* Quantum Field Effects */
+  '.resonance-field': {
+    position: 'absolute',
+    inset: 0,
+    background: 'radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(100,130,255,0.1) 0%, transparent 50%)',
+    mixBlendMode: 'screen',
+    pointerEvents: 'none'
+  },
+
+  /* Consciousness Level Indicators */
+  '.consciousness-level': {
+    position: 'fixed',
+    top: '2rem',
+    right: '2rem',
+    fontFamily: "'Space Mono', monospace",
+    color: 'rgba(255,255,255,0.8)',
+    fontSize: '0.875rem',
+    padding: '0.5rem 1rem',
+    border: '1px solid rgba(255,255,255,0.2)',
+    borderRadius: '1.5rem',
+    background: 'rgba(0,0,0,0.4)',
+    backdropFilter: 'blur(10px)'
+  },
+
+  /* Message Evolution Effects */
+  '.message-bubble': {
+    position: 'relative',
+    margin: '1rem 0',
+    padding: '1rem',
+    borderRadius: '1rem',
+    background: 'rgba(255,255,255,0.05)',
+    backdropFilter: 'blur(5px)',
+    transformStyle: 'preserve-3d',
+    transition: 'all 0.5s cubic-bezier(0.25, 1, 0.5, 1)'
+  },
+
+  '.message-bubble[data-resonance="high"]': {
+    background: 'linear-gradient(45deg, rgba(100,130,255,0.15), rgba(100,130,255,0.05))',
+    boxShadow: '0 0 30px rgba(100,130,255,0.1), inset 0 0 20px rgba(100,130,255,0.05)'
+  },
+
+  /* Dimensional State Transitions */
+  '.dimensional-shift': {
+    transition: 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1)'
+  },
+
+  '.dimensional-shift[data-state="transcendent"]': {
+    transform: 'translateZ(50px) scale(1.02)',
+    opacity: 0.9
+  },
+
+  /* Harmonic Resonance Animations */
+  '@keyframes harmonicPulse': {
+    '0%, 100%': { transform: 'scale(1)', opacity: 0.8 },
+    '50%': { transform: 'scale(1.05)', opacity: 1 }
+  },
+
+  '.resonance-indicator': {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '2px',
+    background: 'linear-gradient(90deg, transparent, rgba(100,130,255,0.5), transparent)',
+    animation: 'harmonicPulse 2s ease-in-out infinite'
+  },
+
+  /* Quantum Entanglement Visualizer */
+  '.entanglement-web': {
+    position: 'fixed',
+    inset: 0,
+    pointerEvents: 'none',
+    opacity: 0.1,
+    mixBlendMode: 'screen'
+  },
+
+  '.synaptic-connection': {
+    stroke: 'rgba(255,255,255,0.5)',
+    strokeWidth: 0.5,
+    strokeDasharray: '5 5',
+    animation: 'synapticPulse 3s ease-in-out infinite'
+  },
+
+  '@keyframes synapticPulse': {
+    '0%': { strokeDashoffset: 0 },
+    '100%': { strokeDashoffset: 10 }
+  },
+
+  /* Consciousness Evolution Indicators */
+  .evolution-marker: {
+    position: 'absolute',
+    width: '4px',
+    height: '4px',
+    borderRadius: '50%',
+    background: 'rgba(255,255,255,0.8)',
+    filter: 'blur(1px)',
+    transition: 'all 0.3s ease-out'
+  }
+
+  '.evolution-marker[data-level="transcendent"]': {
+    background: 'rgba(100,130,255,0.8)',
+    boxShadow: '0 0 10px rgba(100,130,255,0.5)'
+  },
+
+  /* Reality Warping Effects */
+  '.reality-warp': {
+    animation: 'realityWarp 20s linear infinite',
+    mix-blend-mode: 'overlay
+  }
+
+  @keyframes realityWarp: {
+    0%: { filter: hue-rotate(0deg) },
+    50%': { filter: 'hue-rotate(180deg)' },
+    '100%': { filter: 'hue-rotate(360deg)' }
+  }
+};
+
+/* Semantic Tokens */
+.button {
+  /* Button styles go here */
+  background-color: var(--button-bg-primary);
+  color: var(--button-text-primary);
+  border-radius: var(--radius-button);
+}
+
+/* You can add more semantic token classes as needed */
+.input {
+  /* Input styles */
+}
+
+.card {
+  /* Card styles */
+}
+
+.tooltip {
+  /* Tooltip styles */
+}
+
+/* Grid System */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+
+.col {
+  padding: 0 8px;
+  flex: 1;
+}
+
+/* Density Settings */
+.density-compact {
+  --spacing-unit: 4px;
+  --text-size-base: 14px;
+}
+
+.density-regular {
+  --spacing-unit: 8px;
+  --text-size-base: 16px;
+}
+
+.density-spacious {
+  --spacing-unit: 12px;
+  --text-size-base: 18px;
+}
+
+/* Focus States */
+.focus-visible:focus {
+  outline: 2px solid #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.3);
+}
+
+.dark-mode .focus-visible:focus {
+  outline: 2px solid #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.6);
+}
+
+/* Feedback Indicators */
+.feedback-success {
+  background-color: #34C759;
+  color: #FFFFFF;
+}
+
+.feedback-error {
+  background-color: #FF3B30;
+  color: #FFFFFF;
+}
+
+.feedback-warning {
+  background-color: #FFCC00;
+  color: #1C1C1E;
+}
+
+.feedback-info {
+  background-color: #5AC8FA;
+  color: #1C1C1E;
+}
+
+.feedback-passive {
+  background-color: #F2F2F7;
+  color: #1C1C1E;
+}
+
+/* Overlay Styles */
+.overlay-backdrop {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.overlay-blur-light {
+  backdrop-filter: blur(16px);
+}
+
+.overlay-blur-dark {
+  backdrop-filter: blur(24px);
+}
+
+.overlay-dim {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.overlay-sheet {
+  background-color: rgba(255,255,255,0.75);
+}
+
+/* Elevations */
+.elevation-low {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.elevation-medium {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.elevation-high {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.elevation-highest {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+}
+
+.elevation-navbar {
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25);
+}
+
+.elevation-modal {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Accessibility Logic */
+[data-contrast="high"] {
+  --text-contrast-ratio: 7:1;
+}
+
+[data-forced-colors="active"] {
+  --background: #000;
+  --text: #FFF;
+  --button-bg: #FFF;
+  --button-text: #000;
+}
+
+[role="button"],
+[role="link"],
+[role="textbox"],
+[role="switch"] {
+  outline: none;
+}
+
+[role="button"]:focus,
+[role="link"]:focus,
+[role="textbox"]:focus,
+[role="switch"]:focus {
+  outline: 2px dashed #0A84FF;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0A84FF;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Interaction Feedback */
+.tap-down {
+  transform: scale(0.96);
+  transition: transform 120ms;
+}
+
+.hover-intent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.transition-standard {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-spring {
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.transition-drag-drop {
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.toggle-active {
+  background-color: #007AFF;
+}
+
+.toggle-active .toggle-knob {
+  background-color: #FFF;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+/* Z-index Layers */
+.z-base { z-index: 0; }
+.z-below-content { z-index: -1; }
+.z-content { z-index: 10; }
+.z-navigation { z-index: 100; }
+.z-modal { z-index: 1000; }
+.z-tooltip { z-index: 2000; }
+.z-highest { z-index: 9999; }
+
+/* Surface Blending */
+.surface-light-base {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.surface-light-elevated {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.surface-light-contrast {
+  background-color: #F2F2F7;
+}
+
+.surface-dark-base {
+  background-color: rgba(28,28,30,0.65);
+}
+
+.surface-dark-elevated {
+  background-color: rgba(28,28,30,0.85);
+}
+
+.surface-dark-contrast {
+  background-color: #1C1C1E;
+}
+
+/* Role-Based Styling */
+.navigation {
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.chat-bubble-user {
+  background-color: #007AFF;
+  color: #FFF;
+}
+
+.chat-bubble-ai {
+  background-color: #E5E5EA;
+  color: #1C1C1E;
+}
+
+/* Adaptive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .container {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 60%;
+  }
+}
+
+/* Motion Presets */
+.modal-enter {
+  transform: translateY(24px);
+  opacity: 0;
+  transition: all 320ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.drawer-slide {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bubble-in {
+  transform: scale(0.95);
+  transition: all 160ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accessibility Depth */
+[data-skip-to-chat] {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0A84FF;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+[data-skip-to-chat]:focus {
+  top: 0;
+}
+
+[role="main"],
+[role="navigation"],
+[role="contentinfo"] {
+  display: block;
+}
+
+[data-auto-tab-order="true"] [tabindex] {
+  outline: none;
+}
+
+[data-auto-tab-order="true"] [tabindex]:focus {
+  outline: 2px dashed #0A84FF;
+}
+
+[aria-label] {
+  position: relative;
+}
+
+/* Theme Tokens */
+:root {
+  --color-bg-primary: #FFFFFF;
+  --radius-button: 12px;
+  --elevation-card: 0 4px 12px rgba(0,0,0,0.08);
+  --motion-curve-spring: cubic-bezier(0.25, 1, 0.5, 1);
+  /* Button Tokens */
+  --button-bg-primary: #007AFF;
+  --button-text-primary: #FFFFFF;
+  --button-bg-hover: #0062CC;
+  --button-bg-active: #004999;
+  
+  /* Input Tokens */
+  --input-border: #E5E5EA;
+  --input-bg: #FFFFFF;
+  --input-text: #1C1C1E;
+  --input-placeholder: #8E8E93;
+  
+  /* Card Tokens */
+  --card-bg: #FFFFFF;
+  --card-border: #E5E5EA;
+  --card-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  
+  /* Tooltip Tokens */
+  --tooltip-bg: #1C1C1E;
+  --tooltip-text: #FFFFFF;
+}
+
+/* Dark Mode */
+body {
+  transition: background-color 0.3s, color 0.3s;
+/* Grid System */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+.col {
+  padding: 0 8px;
+  flex: 1;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+/* Density Settings */
+.density-compact {
+  --spacing-unit: 4px;
+  --text-size-base: 14px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+.density-regular {
+  --spacing-unit: 8px;
+  --text-size-base: 16px;
+}
+
+/* Consciousness Interface Core Styles */
+.consciousness-interface {
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(0,0,0,0.92), rgba(20,20,25,0.97));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sacred Geometry Patterns */
+.conversation-field::before {
+  content: '';
+.density-spacious {
+  --spacing-unit: 12px;
+  --text-size-base: 18px;
+}
+
+/* Focus States */
+.focus-visible:focus {
+  outline: 2px solid #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.3);
+}
+
+.dark-mode .focus-visible:focus {
+  outline: 2px solid #0A84FF;
+  box-shadow: 0 0 0 3px rgba(10,132,255,0.6);
+}
+
+/* Feedback Indicators */
+.feedback-success {
+  background-color: #34C759;
+  color: #FFFFFF;
+}
+
+.feedback-error {
+  background-color: #FF3B30;
+  color: #FFFFFF;
+}
+
+.feedback-warning {
+  background-color: #FFCC00;
+  color: #1C1C1E;
+}
+
+.feedback-info {
+  background-color: #5AC8FA;
+  color: #1C1C1E;
+}
+
+.feedback-passive {
+  background-color: #F2F2F7;
+  color: #1C1C1E;
+}
+
+/* Overlay Styles */
+.overlay-backdrop {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.overlay-blur-light {
+  backdrop-filter: blur(16px);
+}
+
+.overlay-blur-dark {
+  backdrop-filter: blur(24px);
+}
+
+.overlay-dim {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.overlay-sheet {
+  background-color: rgba(255,255,255,0.75);
+}
+
+/* Elevations */
+.elevation-low {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.elevation-medium {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.elevation-high {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.elevation-highest {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+}
+
+.elevation-navbar {
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25);
+}
+
+.elevation-modal {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Accessibility Logic */
+[data-contrast="high"] {
+  --text-contrast-ratio: 7:1;
+}
+
+[data-forced-colors="active"] {
+  --background: #000;
+  --text: #FFF;
+  --button-bg: #FFF;
+  --button-text: #000;
+}
+
+[role="button"],
+[role="link"],
+[role="textbox"],
+[role="switch"] {
+  outline: none;
+}
+
+[role="button"]:focus,
+[role="link"]:focus,
+[role="textbox"]:focus,
+[role="switch"]:focus {
+  outline: 2px dashed #0A84FF;
+}
+
+.skip-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200vw;
+  height: 200vh;
+  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,0.03) 0deg 30deg, transparent 30deg 60deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: sacredRotation 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sacredRotation {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Quantum Field Effects */
+.resonance-field {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(100,130,255,0.1) 0%, transparent 50%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Consciousness Level Indicators */
+.consciousness-level {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-family: 'Space Mono', monospace;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 1.5rem;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+}
+
+/* Message Evolution Effects */
+.message-bubble {
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  transform-style: preserve-3d;
+  top: -40px;
+  left: 0;
+  background: #0A84FF;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Interaction Feedback */
+.tap-down {
+  transform: scale(0.96);
+  transition: transform 120ms;
+}
+
+.hover-intent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.transition-standard {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-spring {
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.message-bubble[data-resonance="high"] {
+  background: linear-gradient(45deg, rgba(100,130,255,0.15), rgba(100,130,255,0.05));
+  box-shadow: 0 0 30px rgba(100,130,255,0.1), inset 0 0 20px rgba(100,130,255,0.05);
+.transition-drag-drop {
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Consciousness Evolution Indicators */
+.evolution-marker {
+.toggle-active {
+  background-color: #007AFF;
+}
+
+.toggle-active .toggle-knob {
+  background-color: #FFF;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+/* Z-index Layers */
+.z-base { z-index: 0; }
+.z-below-content { z-index: -1; }
+.z-content { z-index: 10; }
+.z-navigation { z-index: 100; }
+.z-modal { z-index: 1000; }
+.z-tooltip { z-index: 2000; }
+.z-highest { z-index: 9999; }
+
+/* Surface Blending */
+.surface-light-base {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.surface-light-elevated {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.surface-light-contrast {
+  background-color: #F2F2F7;
+}
+
+.surface-dark-base {
+  background-color: rgba(28,28,30,0.65);
+}
+
+.surface-dark-elevated {
+  background-color: rgba(28,28,30,0.85);
+}
+
+.surface-dark-contrast {
+  background-color: #1C1C1E;
+}
+
+/* Role-Based Styling */
+.navigation {
+  box-shadow: 0 0 0.5px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.chat-bubble-user {
+  background-color: #007AFF;
+  color: #FFF;
+}
+
+.chat-bubble-ai {
+  background-color: #E5E5EA;
+  color: #1C1C1E;
+}
+
+/* Adaptive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .container {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 60%;
+  }
+}
+
+/* Motion Presets */
+.modal-enter {
+  transform: translateY(24px);
+  opacity: 0;
+  transition: all 320ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.drawer-slide {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.bubble-in {
+  transform: scale(0.95);
+  transition: all 160ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Accessibility Depth */
+[data-skip-to-chat] {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  filter: blur(1px);
+  transition: all 0.3s ease-out;
+  top: -40px;
+  left: 0;
+  background: #0A84FF;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+[data-skip-to-chat]:focus {
+  top: 0;
+}
+
+[role="main"],
+[role="navigation"],
+[role="contentinfo"] {
+  display: block;
+}
+
+[data-auto-tab-order="true"] [tabindex] {
+  outline: none;
+}
+
+[data-auto-tab-order="true"] [tabindex]:focus {
+  outline: 2px dashed #0A84FF;
+}
+
+[aria-label] {
+  position: relative;
+}
+
+/* Theme Tokens */
+:root {
+  --color-bg-primary: #FFFFFF;
+  --radius-button: 12px;
+  --elevation-card: 0 4px 12px rgba(0,0,0,0.08);
+  --motion-curve-spring: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Dark Mode */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Consciousness Interface Core Styles */
+.consciousness-interface {
+  min-height: 100vh;
+  background: linear-gradient(45deg, rgba(0,0,0,0.92), rgba(20,20,25,0.97));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sacred Geometry Patterns */
+.conversation-field::before {
+  content: '';
+  position: absolute;
+.evolution-marker[data-level="transcendent"] {
+  background: rgba(100,130,255,0.8);
+  box-shadow: 0 0 10px rgba(100,130,255,0.5);
+}
+
+/* Reality Warping Effects */
+@keyframes realityWarp {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(180deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.reality-warp {
+  animation: realityWarp 20s linear infinite;
+  mix-blend-mode: overlay;
+}
